@@ -46,7 +46,28 @@ namespace ConsommiTounsi.Controllers
         // GET: Aisel/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            Aisel aisel = null;
+
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("http://localhost:8081/");
+
+                //HTTP GET
+
+                var responseTask = client.GetAsync("/SpringMVC/servlet/Aisel/getAiselById/" + id.ToString());
+                responseTask.Wait();
+
+                var result = responseTask.Result;
+                if (result.IsSuccessStatusCode)
+                {
+                    var readTask = result.Content.ReadAsAsync<Aisel>();
+                    readTask.Wait();
+
+                    aisel = readTask.Result;
+                }
+            }
+
+            return View(aisel);
         }
 
         // GET: Aisel/Create

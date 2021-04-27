@@ -560,6 +560,7 @@
     <Content Include="Views\AdsView\getAdsView.cshtml" />
     <Content Include="Views\Aisel\Create.cshtml" />
     <Content Include="Views\Aisel\Edit.cshtml" />
+    <Content Include="Views\Aisel\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
