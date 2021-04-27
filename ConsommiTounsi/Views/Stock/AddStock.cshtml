@@ -1,0 +1,69 @@
+﻿@model ConsommiTounsi.Models.Stock
+
+@{
+    ViewBag.Title = "AddStock";
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title mb-4">Add Stock</h4>
+                        <form class="outer-repeater">
+                            <div data-repeater-list="outer-group" class="outer">
+                                <div data-repeater-item="" class="outer">
+                                    <div class="mb-3">
+                                        <label class="form-label" for="formname">Name :</label>
+                                        <input type="text" class="form-control" id="formname" placeholder="Enter your Name...">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label" for="formemail">Email :</label>
+                                        <input type="email" class="form-control" id="formemail" placeholder="Enter your Email...">
+                                    </div>
+
+                                    <div class="inner-repeater mb-4">
+                                        <div data-repeater-list="inner-group" class="inner form-group">
+                                            <label class="form-label">Phone no :</label>
+                                            <div data-repeater-item="" class="inner mb-3 row">
+                                                <div class="col-md-10 col-8">
+                                                    <input type="text" class="inner form-control" placeholder="Enter your phone no...">
+                                                </div>
+                                                <div class="col-md-2 col-4 d-grid">
+                                                    <input data-repeater-delete="" type="button" class="btn btn-primary btn-block inner" value="Delete">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <input data-repeater-create="" type="button" class="btn btn-success inner" value="Add Number">
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <label class="form-label d-block mb-3">Gender :</label>
+                                        <div class="custom-radio form-check form-check-inline">
+                                            <input type="radio" id="customRadioInline1" name="outer-group[0][customRadioInline1]" class="form-check-input">
+                                            <label class="form-check-label" for="customRadioInline1">Male</label>
+                                        </div>
+                                        <div class="custom-radio form-check form-check-inline">
+                                            <input type="radio" id="customRadioInline2" name="outer-group[0][customRadioInline1]" class="form-check-input">
+                                            <label class="form-check-label" for="customRadioInline2">Female</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label" for="formmessage">Message :</label>
+                                        <textarea id="formmessage" class="form-control" rows="3"></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</div>
+</div>

@@ -1,0 +1,117 @@
+﻿@model IEnumerable<ConsommiTounsi.Models.KeedoApp.Models.Event>
+
+@{
+    ViewBag.Title = "ManageEvent";
+}
+
+<h2>ManageEvent</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdEvenement)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hour)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TicketPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CollAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ParticipantsNbr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlacesNbr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EarlyParticipants)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NbrTicketEarlyParticipants)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Views)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiscountPercentage)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdEvenement)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hour)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TicketPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CollAmount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ParticipantsNbr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlacesNbr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EarlyParticipants)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NbrTicketEarlyParticipants)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Views)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiscountPercentage)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

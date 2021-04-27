@@ -1,0 +1,85 @@
+﻿@model IEnumerable<ConsommiTounsi.Models.Ads>
+
+@{
+    ViewBag.Title = "ManageAds";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Scripts {
+
+    @Scripts.Render("~/bundles/jqueryui")
+    @Styles.Render("~/Content/cssjqryUi")
+
+    <script type="text/javascript">
+
+     $(document).ready(function () {
+         $('input[type=datetime]').datepicker({
+             dateFormat: "dd/M/yy",
+             changeMonth: true,
+             changeYear: true,
+             yearRange: "-60:+0"
+         });
+
+     });
+    </script>
+
+}
+
+<h2>ManageAds</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.dateCreation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mediaType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.startDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.finishDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.target)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.targetView_tot)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.dateCreation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.mediaType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.startDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.finishDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.target)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.targetView_tot)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { idAds = item.idAds }) |
+                @Html.ActionLink("Details", "Details", new { idAds= item.idAds }) |
+                @Html.ActionLink("Delete", "Delete", new {  idAds=item.idAds  })
+            </td>
+        </tr>
+    }
+
+</table>

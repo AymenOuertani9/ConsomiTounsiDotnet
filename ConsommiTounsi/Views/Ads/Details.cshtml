@@ -1,0 +1,75 @@
+﻿@model ConsommiTounsi.Models.Ads
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Ads</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.dateCreation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dateCreation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mediaType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mediaType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.madia)
+        </dt>
+
+        <dd>
+            <img src="~/UploadedFiles/@Html.DisplayFor(model => model.madia)" style="height:200px;width:200px;" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.startDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.startDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.finishDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.finishDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.target)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.target)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.targetView_tot)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.targetView_tot)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

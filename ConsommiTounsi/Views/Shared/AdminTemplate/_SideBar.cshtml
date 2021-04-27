@@ -1,0 +1,223 @@
+﻿
+<div class="vertical-menu">
+
+    <!-- LOGO -->
+    <div class="navbar-brand-box" style="margin-left:10px;">
+        <a href="@Url.Action("Dashboard","Home")" class="logo logo-dark" style="margin-left:40px;">
+            <span class="logo-sm">
+                <img src="/Frontend/assets/images/logo.png" alt="" height="42" >
+            </span>
+            <span class="logo-lg">
+                <img src="/Frontend/assets/images/logo.png" alt="" height="42" >
+            </span>
+        </a>
+
+        <a href="index.html" class="logo logo-light">
+            <span class="logo-sm">
+                <img src="/FrontEnd/assets/images/logo1.png" alt="">
+            </span>
+            <span class="logo-lg">
+                <img src="/FrontEnd/assets/images/logo1.png" alt="" height="22">
+            </span>
+        </a>
+    </div>
+
+    <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect vertical-menu-btn">
+        <i class="fa fa-fw fa-bars"></i>
+    </button>
+
+    <div data-simplebar class="sidebar-menu-scroll">
+
+        <!--- Sidemenu -->
+        <div id="sidebar-menu">
+            <!-- Left Menu Start -->
+            <ul class="metismenu list-unstyled" id="side-menu">
+                <li class="menu-title">Menu</li>
+
+                <li>
+                    <a href="@Url.Action("Dashboard","Home")">
+                        <i class="uil-home-alt"></i><span class="badge rounded-pill bg-primary float-end">01</span>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <!--
+        <li>
+        <a href="javascript: void(0);" class="has-arrow waves-effect">
+            <i class="uil-window-section"></i>
+            <span>Layouts</span>
+        </a>
+        <ul class="sub-menu" aria-expanded="true">
+            <li>
+                <a href="javascript: void(0);" class="has-arrow">Vertical</a>
+                <ul class="sub-menu" aria-expanded="true">
+                    <li><a href="layouts-dark-sidebar.html">Dark Sidebar</a></li>
+                    <li><a href="layouts-compact-sidebar.html">Compact Sidebar</a></li>
+                    <li><a href="layouts-icon-sidebar.html">Icon Sidebar</a></li>
+                    <li><a href="layouts-boxed.html">Boxed Width</a></li>
+                    <li><a href="layouts-preloader.html">Preloader</a></li>
+                    <li><a href="layouts-colored-sidebar.html">Colored Sidebar</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript: void(0);" class="has-arrow">Horizontal</a>
+                <ul class="sub-menu" aria-expanded="true">
+                    <li><a href="layouts-horizontal.html">Horizontal</a></li>
+                    <li><a href="layouts-hori-topbar-dark.html">Topbar Dark</a></li>
+                    <li><a href="layouts-hori-boxed-width.html">Boxed Width</a></li>
+                    <li><a href="layouts-hori-preloader.html">Preloader</a></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+
+    -->
+                <li class="menu-title">User</li>
+
+
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="uil-user"></i>
+                        <span>Users</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="@Url.Action("ManageUsers","User")">Users List </a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-title">Category</li>
+
+
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="uil-shopping-basket"></i>
+                        <span>Categories</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="ecommerce-products.html">Manage Category</a></li>
+
+                    </ul>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="ecommerce-products.html">Manage Products</a></li>
+
+                    </ul>
+                </li>
+                <li class="menu-title">Promotion</li>
+
+
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="uil-pump"></i>
+                        <span>Promotions</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="#">Manage Promotions</a></li>
+
+                    </ul>
+
+                </li>
+                <li class="menu-title">Stock</li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="uil-store-slash"></i>
+                        <span>Stocks</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+
+                        <li><a href="@Url.Action("ManageStock","Stock")">Manage Stock</a></li>
+                    </ul>
+                    <ul class="sub-menu" aria-expanded="false">
+
+                        <li><a href="@Url.Action("ManageStock","Stock")">Suppliyers</a></li>
+                    </ul>
+                    <ul class="sub-menu" aria-expanded="false">
+
+                        <li><a href="@Url.Action("ManageStock","Stock")">Supplying Orders</a></li>
+                    </ul>
+
+                </li>
+
+                <li class="menu-title">Order</li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="uil-shopping-bag"></i>
+                        <span>Orders</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+
+                        <li><a href="@Url.Action("ListOrder","Order")">Order List </a></li>
+                    </ul>
+                    <ul class="sub-menu" aria-expanded="false">
+
+                        <li><a href="@Url.Action("ListTransaction","Order")">Transactions</a></li>
+                    </ul>
+
+                </li>
+
+
+                <li class="menu-title">Events</li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="uil-calendar-alt"></i>
+                        <span>Events</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+
+                        <li><a href="~/Views/Home/About.cshtml">Manage Events</a></li>
+                    </ul>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="email-inbox.html">Manage Participations</a></li>
+                    </ul>
+                </li>
+                <li class="menu-title">Meeting</li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="uil-meeting-board"></i>
+                        <span>Meetings</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="email-inbox.html">Manage Meeting</a></li>
+                    </ul>
+
+                </li>
+                <li class="menu-title">Delivery</li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="uil-truck"></i>
+                        <span>Delivery</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+
+                        <li><a href="@Url.Action("ListDeliveryMan","Delivery")">Manage Delivery</a></li>
+                    </ul>
+
+                </li>
+
+                <li class="menu-title">Chat</li>
+                <li>
+                    <a href="@Url.Action("Chat","User")" class="has-arrow waves-effect">
+                        <i class="uil-chat"></i>
+                        <span>Chat</span>
+                    </a>
+
+
+                </li>
+                <li class="menu-title">Ads</li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="uil-truck"></i>
+                        <span>Ads</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+
+                        <li><a href="@Url.Action("ManageAds","Ads")"> Ads</a></li>
+                        <li><a href="@Url.Action("Index","Adsview")">Manage Ads View</a></li>
+                    </ul>
+
+                </li>
+
+
+            </ul>
+</div>
+        <!-- Sidebar -->
+    </div>
+</div>
