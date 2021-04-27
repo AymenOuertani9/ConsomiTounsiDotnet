@@ -544,7 +544,6 @@
     <Content Include="Views\Ads\create.cshtml" />
     <Content Include="Views\Ads\Edit.cshtml" />
     <Content Include="Views\AdsView\Index.cshtml" />
-    <Content Include="Views\Aisel\create.cshtml" />
     <Content Include="Views\Aisel\Index.cshtml" />
     <Content Include="Views\Stock\GetStock.cshtml" />
     <Content Include="Views\Supplier\Index.cshtml" />
@@ -559,6 +558,8 @@
     <Content Include="Views\FileUpload\Index.cshtml" />
     <Content Include="Views\AdsView\FinalStat.cshtml" />
     <Content Include="Views\AdsView\getAdsView.cshtml" />
+    <Content Include="Views\Aisel\Create.cshtml" />
+    <Content Include="Views\Aisel\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

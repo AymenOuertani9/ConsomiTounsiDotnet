@@ -71,41 +71,63 @@ namespace ConsommiTounsi.Controllers
         }
 
         // POST: Aisel/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create()
         {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            return View();
         }
 
         // GET: Aisel/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            Aisel aisel = null;
+
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("http://localhost:8081/");
+
+                //HTTP GET
+
+                var responseTask = client.GetAsync("/SpringMVC/servlet/Aisel/getAiselById/" + id.ToString());
+                responseTask.Wait();
+
+                var result = responseTask.Result;
+                if (result.IsSuccessStatusCode)
+                {
+                    var readTask = result.Content.ReadAsAsync<Aisel>();
+                    readTask.Wait();
+
+                    aisel= readTask.Result;
+                }
+            }
+
+            return View(aisel);
         }
 
         // POST: Aisel/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, Aisel aisel)
         {
-            try
+            using (var client = new HttpClient())
             {
-                // TODO: Add update logic here
+                client.BaseAddress = new Uri("http://localhost:8081/");
 
-                return RedirectToAction("Index");
+
+                //HTTP POST
+                var putTask = client.PutAsJsonAsync<Aisel>("/SpringMVC/servlet/ModAisel/" + id, aisel);
+                putTask.Wait();
+
+                var result = putTask.Result;
+                if (result.IsSuccessStatusCode)
+                {
+
+                    return RedirectToAction("index");
+
+                }
+                return View(aisel);
+
             }
-            catch
-            {
-                return View();
-            }
+
+
         }
 
         // GET: Aisel/Delete/5
