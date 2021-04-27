@@ -520,6 +520,7 @@
     <Content Include="Views\Operation\Index.cshtml" />
     <Content Include="Views\Compte\Index.cshtml" />
     <Content Include="Views\Compte\Create.cshtml" />
+    <Content Include="Views\Compte\Detail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

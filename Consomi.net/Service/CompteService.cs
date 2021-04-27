@@ -63,7 +63,7 @@ namespace Consomi.net.Service
         {
 
 
-            var tokenResponse = httpClient.GetAsync(Statics.baseAddress + "getCartById/" + id).Result;
+            var tokenResponse = httpClient.GetAsync(Statics.baseAddress + "getcomptebyid/" + id).Result;
 
             return tokenResponse.Content.ReadAsAsync<Compte>().Result;
 

@@ -16,6 +16,20 @@ namespace Consomi.net.Controllers
         {
             return View(cs.GetAll());
         }
+        public ActionResult Detail(int id)
+        {
+
+            Compte compte = cs.GetById(id);
+
+            if (compte != null)
+            {
+
+                return View(compte);
+            }
+
+            return View();
+
+        }
         // GET: Compte/Create
         public ActionResult Create()
         {
