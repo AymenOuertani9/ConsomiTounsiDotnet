@@ -1,0 +1,51 @@
+﻿@model ConsommiTounsi.Models.AdsView
+
+@{
+    ViewBag.Title = "getAdsView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>getAdsView</h2>
+
+<div>
+    <h4>AdsView</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.idAdsView)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idAdsView)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Total_Num)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Total_Num)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Total_man)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Total_man)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Total_Woman)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Total_Woman)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

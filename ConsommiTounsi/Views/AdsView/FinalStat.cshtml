@@ -13,9 +13,6 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.idAdsView)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Total_Num)
         </th>
         <th>
@@ -29,9 +26,6 @@
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.idAdsView)
-        </td>
         <td>
             @Html.DisplayFor(modelItem => item.Total_Num)
         </td>

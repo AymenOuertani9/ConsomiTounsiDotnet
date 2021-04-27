@@ -115,7 +115,7 @@ namespace ConsommiTounsi.Controllers
             }
         }
 
-        public ActionResult FinalStat()
+        /*public ActionResult FinalStat(int idAds)
         {
             System.Diagnostics.Debug.WriteLine("here");
             IEnumerable<AdsView> adsview = null;
@@ -123,13 +123,14 @@ namespace ConsommiTounsi.Controllers
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri("http://localhost:8081");
-                var responseTask = client.GetAsync("/SpringMVC/servlet/finalStats");
+                var responseTask = client.GetAsync("/SpringMVC/servlet/currentStat/"+ idAds.ToString());
                 responseTask.Wait();
                 var result = responseTask.Result;
                 System.Diagnostics.Debug.WriteLine("here2" + result);
                 if (result.IsSuccessStatusCode)
                 {
                     var readJob = result.Content.ReadAsAsync<IList<AdsView>>();
+                    System.Diagnostics.Debug.WriteLine("here" + readJob.ToString());
                     readJob.Wait();
                     adsview = readJob.Result;
                     Console.WriteLine(adsview);
@@ -145,6 +146,36 @@ namespace ConsommiTounsi.Controllers
 
             }
             return View(adsview);
+        }
+        */
+
+        public ActionResult getAdsView(int idAds)
+        {
+            System.Diagnostics.Debug.WriteLine(idAds);
+
+            AdsView adview = null;
+
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("http://localhost:8081/");
+
+                //HTTP GET
+
+                var responseTask = client.GetAsync("/SpringMVC/servlet/finalStats/" + idAds.ToString());
+                System.Diagnostics.Debug.WriteLine(idAds);
+                responseTask.Wait();
+                var result = responseTask.Result;
+                if (result.IsSuccessStatusCode)
+                {
+                    var readTask = result.Content.ReadAsAsync<AdsView>();
+                    readTask.Wait();
+
+                    adview = readTask.Result;
+                }
+            }
+
+            return View(adview);
+
         }
     }
 }
