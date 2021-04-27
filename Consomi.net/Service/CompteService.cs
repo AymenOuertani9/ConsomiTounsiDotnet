@@ -68,5 +68,19 @@ namespace Consomi.net.Service
             return tokenResponse.Content.ReadAsAsync<Compte>().Result;
 
         }
+        public bool deleteCompteById(int Idc)
+        {
+            try
+            {
+
+                var APIResponse = httpClient.DeleteAsync(Statics.baseAddress + "deletecompte/" + Idc);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
     }
 }

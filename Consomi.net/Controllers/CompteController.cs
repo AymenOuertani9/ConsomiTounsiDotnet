@@ -61,5 +61,34 @@ namespace Consomi.net.Controllers
             return View();
 
         }
+        // GET: Compte/Delete/5
+        public ActionResult Delete(int id)
+        {
+            Compte c = cs.GetById(id);
+
+            if (c != null)
+            {
+
+
+                return View(c);
+            }
+            return View();
+        }
+
+        // POST: Compte/Delete/5
+        [HttpPost]
+        public ActionResult Delete(int id, FormCollection collection)
+        {
+
+
+            if (cs.deleteCompteById(id))
+            {
+                return RedirectToAction("Index");
+            }
+
+
+            return View();
+
+        }
     }
 }
