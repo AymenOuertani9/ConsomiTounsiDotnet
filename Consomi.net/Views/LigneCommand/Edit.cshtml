@@ -1,0 +1,98 @@
+﻿@model Consomi.net.Models.LigneComand
+
+@{
+    ViewBag.Title = "Edit";
+}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+<div class="col-md-3">
+    <div class="logo">
+
+        <span class="fas fa-arrow-left"></span><a href="@Url.Action("Index","Home")">
+            <img src="~/Content/img/logo.png" alt="Logo" width="100">
+
+        </a>
+        <h2>Edit</h2>
+        <h4>LigneComand</h4>
+    </div>
+
+</div>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Site Metas -->
+    <title>Freshshop - Ecommerce Bootstrap 4 HTML Template</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="~/Content/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="~/Content/images/apple-touch-icon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/Content/csss/bootstrap.min.css">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="~/Content/csss/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="~/Content/csss/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="~/Content/csss/custom.css">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        @Html.HiddenFor(model => model.Idlc)
+
+        @Html.HiddenFor(model => model.Subtotal)
+        @Html.HiddenFor(model => model.Date)
+        @Html.HiddenFor(model => model.Idcart)
+        @Html.HiddenFor(model => model.Price)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Qte, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Qte, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Qte, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IdProduct, "Produit", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("IdProduct", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.IdProduct, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <span class="fa fa-pencil-alt"></span>
+                <input type="submit" value="Save" class="btn hvr-hover" />
+            </div>
+
+        </div>
+    </div>
+}
+
+
+

@@ -1,0 +1,67 @@
+﻿@model Consomi.net.Models.Cart
+
+@{
+    ViewBag.Title = "Create";
+}
+
+
+
+<div class="col-md-3">
+    <div class="logo">
+
+        <a href="@Url.Action("Index","Home")">
+            <img src="~/Content/img/logo.png" alt="Logo" width="100">
+
+        </a>
+
+    </div>
+
+</div>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.Idcart)
+    @Html.HiddenFor(model => model.Subtotal)
+    @Html.HiddenFor(model => model.Etatcart)
+    <div class="form-horizontal">
+        
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Currency, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Currency, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Currency, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Iduser, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("Iduser", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Iduser, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+               
+                <button type="submit" @*value="Add to Cart"*@ class="btn btn-cart"><span class="fa fa-shopping-cart"></span> Create </button>
+            </div>
+        </div>
+    </div>
+}
+
+@*<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>*@
+
+@*@section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }*@

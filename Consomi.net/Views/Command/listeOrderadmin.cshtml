@@ -1,0 +1,262 @@
+﻿@model IEnumerable<Consomi.net.Models.Command>
+
+
+@*@{
+        ViewBag.Title = "ManageStock";
+    }
+
+   {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }*@
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+     
+    <link rel="shortcut icon" href="~/Content/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="~/Content/images/apple-touch-icon.png">
+
+     
+    <link rel="stylesheet" href="~/Content/csss/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="~/Content/csss/style.css">
+      
+    <link rel="stylesheet" href="~/Content/csss/responsive.css">
+     
+    <link rel="stylesheet" href="~/Content/csss/custom.css">
+
+   
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    
+
+</head>
+
+
+
+
+@*@{
+        ViewBag.Title = "ManageStock";
+    }*@
+
+@*@{
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }*@
+
+
+
+<div class="container-fluid">
+    <nav class="navbar navbar-expand-md bg-light navbar-full">
+        <div class="col-md-3">
+            <div class="logo">
+
+                <a href="@Url.Action("Index","Home")">
+                    <img src="~/Content/img/logo.png" alt="Logo" width="100">
+
+                </a>
+
+            </div>
+
+        </div>
+        <a href="#" class="navbar-brand">MENU</a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+            <div class="navbar-nav mr-auto">
+                <a href="@Url.Action("ListTransaction","Command")" class="nav-item nav-link">Transaction Management</a>
+                <a href="@Url.Action("Index","Cart")" class="nav-item nav-link active">Cart Management</a>
+                <a href="@Url.Action("listeOrderadmin","Command")" class="nav-item nav-link"><h2>Order Management</h2></a>
+                <a href="@Url.Action("Index","Bill")" class="nav-item nav-link ">Bill Management</a>
+
+
+
+                <div class="navbar-nav ml-auto">
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Bank Management</a>
+                        <div class="dropdown-menu">
+                            <a href="@Url.Action("Index","Operation")" class="dropdown-item">Banking operations</a>
+                            <a href="@Url.Action("Index","Compte")" class="dropdown-item">Bank accounts</a>
+                        </div>
+                    </div>
+                </div>
+
+
+    </nav>
+
+</div>
+
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+
+
+                <div class="bottom-bar">
+                    <div class="container-fluid">
+                        <div class="row align-items-center">
+                            <div class="col-md-3">
+                                <div class="logo">
+
+                                    @*<a href="@Url.Action("Index","Home")">
+                    <img src="~/Content/img/logo.png" alt="Logo">
+
+                </a>*@
+
+                                </div>
+
+                            </div>
+                            <div class="col-md-6">
+                                <div class="search">
+                                    <input type="text" placeholder="Search">
+                                    <button><i class="fa fa-search"></i></button>
+                                </div>
+                            </div>
+                            <!-- Nav Bar End -->
+                            <!-- Bottom Bar Start -->
+                            <!-- end page title -->
+                            @*<div class="row">
+        <div class="col-lg-12">*@
+                            <!--<div>
+
+    <div class="float-end">
+        <form class="d-inline-flex mb-3">
+            <label class="form-check-label my-2 me-2" for="order-selectinput">Orders</label>
+            <select class="form-select" id="order-selectinput">
+                <option selected>All</option>
+                <option value="1">Active</option>
+                <option value="2">Unpaid</option>
+            </select>
+        </form>
+
+    </div>-->
+                            @*<a href="#">
+            <button type="button" class="btn btn-success waves-effect waves-light mb-3"><i class="uil-plus "></i> Orders</button>
+
+        </a>*@
+                            <!--</div>-->
+                            <div class="bottom-bar">
+                                <div class="container-fluid">
+                                    <div class="row align-items-center">
+                                        <div class="breadcrumb-wrap">
+                                            <div class="container-fluid">
+                                                <ul class="breadcrumb">
+                                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                                    <li class="breadcrumb-item"><a href="#">Order</a></li>
+                                                    <li class="breadcrumb-item active">Index</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="table-condensed">
+                                    <table class="table table-centered table-nowrap mb-0">
+                                        <thead class="table-light">
+                                            <tr>
+                                                @*<th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 95px;" aria-label="Order ID: activate to sort column ascending">Num_Order</th>*@
+                                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 95px;" aria-label="Order ID: activate to sort column ascending">Num_Order</th>
+                                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 105px;" aria-label="Date: activate to sort column ascending">Date_Creation</th>
+                                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 133px;" aria-label="Billing Name: activate to sort column ascending">Price</th>
+                                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 63px;" aria-label="Total: activate to sort column ascending">Currency</th>
+                                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 163px;" aria-label="Payment Status: activate to sort column ascending">Description</th>
+                                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 163px;" aria-label="Payment Status: activate to sort column ascending">Intent</th>
+                                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 163px;" aria-label="Payment Status: activate to sort column ascending">Reduction</th>
+                                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 163px;" aria-label="Payment Status: activate to sort column ascending">Increase</th>
+                                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 163px;" aria-label="Payment Status: activate to sort column ascending">Paymentterm</th>
+                                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 163px;" aria-label="Payment Status: activate to sort column ascending">Tva</th>
+                                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 163px;" aria-label="Payment Status: activate to sort column ascending">Last_Name</th>
+                                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 163px;" aria-label="Payment Status: activate to sort column ascending">First_Name</th>
+                                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 163px;" aria-label="Payment Status: activate to sort column ascending">Status</th>
+
+                                                <th style="width: 120px;" class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Action: activate to sort column ascending">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var item in Model)
+                                            {
+
+                                                <tr role="row" class="odd">
+
+                                                    @*<td class="sorting_1 dtr-control">
+                                    <div class="form-check text-center font-size-16">
+                                        <input type="checkbox" class="form-check-input" id="ordercheck1">
+                                        <label class="form-check-label" for="ordercheck1"></label>
+
+                                    </div>
+                                </td>*@
+
+                                                    <td>@Html.DisplayFor(modelItem => item.Numcommand) </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.DateCreation)
+                                                    </td>
+                                                    <td>@Html.DisplayFor(modelItem => item.Price)</td>
+
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.Currency)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.Description)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.Intent)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.Reduction)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.Increase)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.Paymentterm)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.Tva)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.Cart.user.Lastname)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.Cart.user.Firstname)
+                                                    </td>
+                                                    <td>
+                                                        <div class="badge bg-warning bg-soft-success font-size-12">@Html.DisplayFor(modelItem => item.Etat)</div>
+                                                    </td>
+
+                                                    <td>
+                                                        <button type="submit" @*value="Add to Cart"*@ class="btn btn-cart"><span class="fa fa-info"></span> @Html.ActionLink("Details", "Details", new { id = item.Idcommand })</button>
+                                                        <button type="submit" @*value="Add to Cart"*@ class="btn btn-theme"><span class="fa fa-trash"></span>@Html.ActionLink(" Delete Order", "Delete", new { id = item.Idcommand })</button>
+
+                                                        <button type="submit" @*value="Add to Cart"*@ class="btn btn-default"><span class="fas fa-truck-moving"></span> @Html.ActionLink("Track order delivery", "updatestatusbydelivery", new { id = item.Idcommand })</button>
+
+
+                                                    </td>
+
+
+
+                                                </tr>
+                                            }
+
+                                        </tbody>
+                                    </table>
+
+
+                                </div>
+                            </div>
+                        </div>
+                            </div>
+                            <!-- end row -->
+                        </div> <!-- container-fluid -->
+                    </div>
+                    <!-- End Page-content -->
+                    <!-- /Right-bar -->@Scripts.Render("~/Scripts/js")

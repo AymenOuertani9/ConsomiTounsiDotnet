@@ -1,0 +1,162 @@
+﻿@model Consomi.net.Models.Command
+
+@{
+    ViewBag.Title = "remboursercommand";
+}
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Site Metas -->
+    <title>Freshshop - Ecommerce Bootstrap 4 HTML Template</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="~/Content/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="~/Content/images/apple-touch-icon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/Content/csss/bootstrap.min.css">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="~/Content/csss/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="~/Content/csss/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="~/Content/csss/custom.css">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<div class="col-md-3">
+    <div class="logo">
+
+        <a href="@Url.Action("Index","Home")">
+            <img src="~/Content/img/logo.png" alt="Logo" width="100">
+
+        </a>
+
+    </div>
+
+</div>
+<div>
+    <button type="submit" @*value="Add to Cart"*@ class="btn btn-theme"><span class="fas fa-arrow-left"></span> @Html.ActionLink("Back to List", "ListTransaction")</button>
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <hr />
+        @Html.HiddenFor(model => model.Idcommand)
+        @Html.HiddenFor(model => model.Price)
+        @Html.HiddenFor(model => model.Paymentterm)
+        @Html.HiddenFor(model => model.Currency)
+        @Html.HiddenFor(model => model.Method)
+        @Html.HiddenFor(model => model.Intent)
+        @Html.HiddenFor(model => model.Description)
+        @Html.HiddenFor(model => model.Reduction)
+        @Html.HiddenFor(model => model.Increase)
+        @Html.HiddenFor(model => model.DateCreation)
+        @Html.HiddenFor(model => model.DateSend)
+        @Html.HiddenFor(model => model.Numcommand)
+        @Html.HiddenFor(model => model.Tva)
+        @Html.HiddenFor(model => model.Validpayement)
+        @Html.HiddenFor(model => model.Idcart)
+        @Html.HiddenFor(model => model.IdDelivery)
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+        <!--<div class="form-group">-->
+            @*@Html.LabelFor(model => model.Compte.Idcmpt, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <!--<div class="col-md-10">
+                <h3>Account_Sale_Manager</h3>
+                @Html.EditorFor(model => model.Compte.Idcmpt, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Compte.Idcmpt, "", new { @class = "text-danger" })
+            </div>
+        </div>-->
+
+
+
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.Idcmpt, htmlAttributes: new { @class = "control-label col-md-2" })*@
+
+            <div class="col-md-10">
+                <h3>Account_Sale_Manager</h3>
+                @Html.EditorFor(model => model.Idcmpt, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Idcmpt, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+
+                <input type="submit" value="Transfer" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+
+<div class="form-horizontal">
+
+    <div class="feature">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-lg-3 col-md-6 feature-col">
+                    <div class="feature-content">
+                        <i class="fab fa-cc-mastercard"></i>
+                        <h2>Refund Order</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur elit
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 feature-col">
+                    <div class="feature-content">
+                        <i class="fa fa-truck"></i>
+                        <h2>Worldwide Delivery</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur elit
+                        </p>
+                        @*<div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <input type="submit" value="Save" class="btn btn-custom" />
+                                </div>
+                            </div>*@
+
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 feature-col">
+                    <div class="feature-content">
+                        <i class="fa fa-dollar-sign"></i>
+                        <h2>Transfer Amount to Sale Manager Account </h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur elit
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 feature-col">
+                    <div class="feature-content">
+                        <i class="fa fa-comments"></i>
+                        <h2>24/7 Support</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur elit
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

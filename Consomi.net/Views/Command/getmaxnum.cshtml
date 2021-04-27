@@ -1,0 +1,129 @@
+﻿@model IEnumerable<Consomi.net.Models.Command>
+
+@{
+    ViewBag.Title = "getmaxnum";
+}
+
+<h2>getmaxnum</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Idcommand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Paymentterm)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Currency)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Method)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Intent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Reduction)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Increase)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateCreation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateSend)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Numcommand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tva)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Validpayement)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Idcart)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Idcmpt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdDelivery)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Idcommand)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Paymentterm)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Currency)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Method)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Intent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Reduction)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Increase)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateCreation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateSend)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Numcommand)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tva)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Validpayement)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Idcart)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Idcmpt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdDelivery)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

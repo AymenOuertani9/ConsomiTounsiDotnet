@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Consomi.net.Models.Operation>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <link rel="shortcut icon" href="~/Content/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="~/Content/images/apple-touch-icon.png">
+
+
+    <link rel="stylesheet" href="~/Content/csss/bootstrap.min.css">
+
+    <link rel="stylesheet" href="~/Content/csss/style.css">
+
+    <link rel="stylesheet" href="~/Content/csss/responsive.css">
+
+    <link rel="stylesheet" href="~/Content/csss/custom.css">
+
+
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
+
+</head>
+<div class="logo">
+
+    <a href="@Url.Action("listeOrderadmin","Command")">
+        <img src="~/Content/img/logo.png" alt="Logo" width="100">
+
+    </a>
+    <div>
+        @Html.ActionLink("Back to List", "listeOrderadmin")
+    </div>
+</div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NumeroOperation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOperation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Montant)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeroOperation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOperation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Montant)
+            </td>
+
+        </tr>
+    }
+
+</table>
