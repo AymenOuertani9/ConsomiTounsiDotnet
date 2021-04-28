@@ -103,7 +103,7 @@ namespace ConsommiTounsi.Controllers
                 var postResult = postJob.Result;
                 if (postResult.IsSuccessStatusCode)
 
-                    return RedirectToAction("Index");
+                    return RedirectToAction("ManageAds");
             }
             //ModelState.AddModelError(string.Empty, "Server occured errors. Please check with admin!");
             return View(ads);
@@ -211,5 +211,7 @@ namespace ConsommiTounsi.Controllers
             return View(ads2);
 
         }
+
+
     }
 }

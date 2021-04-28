@@ -132,6 +132,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\QuanStockController.cs" />
     <Compile Include="Controllers\StockController.cs" />
     <Compile Include="Controllers\SupplierController.cs" />
     <Compile Include="Controllers\supplyingController.cs" />
@@ -191,6 +192,7 @@
     <Compile Include="Models\Promotion.cs" />
     <Compile Include="Models\Publication.cs" />
     <Compile Include="Models\QRCodeGenerator.cs" />
+    <Compile Include="Models\QuanStock.cs" />
     <Compile Include="Models\Rating.cs" />
     <Compile Include="Models\Refund.cs" />
     <Compile Include="Models\Remarque.cs" />
@@ -561,6 +563,9 @@
     <Content Include="Views\Aisel\Create.cshtml" />
     <Content Include="Views\Aisel\Edit.cshtml" />
     <Content Include="Views\Aisel\Details.cshtml" />
+    <Content Include="Views\QuanStock\Create.cshtml" />
+    <Content Include="Views\Stock\Index.cshtml" />
+    <Content Include="Views\Stock\AddQS.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

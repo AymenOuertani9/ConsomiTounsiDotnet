@@ -27,6 +27,7 @@ namespace ConsommiTounsi.Controllers
                         string path = Path.Combine(Server.MapPath("~/UploadedFiles"), Path.GetFileName(file.FileName));
                         file.SaveAs(path);
                         ViewBag.FileStatus = "File uploaded successfully.";
+                        //return View("~/Views/Ads/create.cshtml");
                     }
                     
                 }
@@ -38,7 +39,8 @@ namespace ConsommiTounsi.Controllers
 
             }
             
-            return View("~/Views/Ads/create.cshtml");
+            
+            return View("Index");
         }
     }
 }   

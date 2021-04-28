@@ -31,6 +31,11 @@
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10 text-success">
                 @ViewBag.FileStatus
+                @{ if (ViewBag.FileStatus == "File uploaded successfully.") { 
+
+                        @Html.ActionLink("Add","create","Ads") 
+                    }
+                }
             </div>
         </div>
     </div>
