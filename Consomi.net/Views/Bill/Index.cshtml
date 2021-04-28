@@ -1,0 +1,231 @@
+﻿@model IEnumerable<Consomi.net.Models.Bill>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="shortcut icon" href="~/Content/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="~/Content/images/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="~/Content/csss/bootstrap.min.css">
+
+    <link rel="stylesheet" href="~/Content/csss/style.css">
+
+    <link rel="stylesheet" href="~/Content/csss/responsive.css">
+
+    <link rel="stylesheet" href="~/Content/csss/custom.css">
+
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <meta name="viewport" content="width=device-width" />
+
+    @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />*@
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" />
+    <link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+
+    <style>
+        span.field-validation-error {
+            color: red;
+        }
+    </style>
+</head>
+@{
+    Layout = null;
+}
+<div class="container-fluid">
+    <nav class="navbar navbar-expand-md bg-light navbar-full">
+        <div class="col-md-3">
+            <div class="logo">
+
+                <a href="@Url.Action("Index","Home")">
+                    <img src="~/Content/img/logo.png" alt="Logo" width="100">
+
+                </a>
+
+            </div>
+
+        </div>
+        <a href="#" class="navbar-brand">MENU</a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+            <div class="navbar-nav mr-auto">
+                <a href="@Url.Action("ListTransaction","Command")" class="nav-item nav-link">Transaction Management</a>
+                <a href="@Url.Action("Index","Cart")" class="nav-item nav-link active">Cart Management </a>
+                <a href="@Url.Action("listeOrderadmin","Command")" class="nav-item nav-link">Order Management</a>
+                <a href="@Url.Action("Index","Bill")" class="nav-item nav-link "><h2>Bill Management</h2></a>
+
+
+
+                <div class="navbar-nav ml-auto">
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Bank Management</a>
+                        <div class="dropdown-menu">
+                            <a href="@Url.Action("Index","Operation")" class="dropdown-item">Banking operations</a>
+                            <a href="@Url.Action("Index","Compte")" class="dropdown-item">Bank accounts</a>
+                        </div>
+                    </div>
+                </div>
+
+
+    </nav>
+
+
+
+    <div class="bottom-bar">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+
+                <div class="breadcrumb-wrap">
+                    <div class="container-fluid">
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item"><a href="#">Bill</a></li>
+                            <li class="breadcrumb-item active">Index</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <table class="table">
+            <tr>
+                <th>
+                    Num_Bill
+                </th>
+                <th>
+                    Total_Final
+                </th>
+                <th>
+                    Date_Reglement
+                </th>
+                <th>
+                    Date_Bill
+                </th>
+
+                <th>
+                    Type_Bill
+                </th>
+
+                <th>
+                    Action
+                </th>
+
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NumBill)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Totalfinal)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Datereglement)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Datebill)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Typeofbill)
+                    </td>
+
+
+                    <td>
+
+
+                        <button type="submit" @*value="Add to Cart"*@ class="btn btn-outline-warning"> @Html.ActionLink("Delete", "Delete", new { id = item.IdBill })</button>
+                    </td>
+                </tr>
+
+            }
+
+        </table>
+        @*<p>
+                <button type="submit" class="btn btn-danger"><span class="fa fa-user-plus">@Html.ActionLink("Create New", "Create")</button>
+            </p>*@
+
+    <div style="width:90%; margin:0 auto" class="tablecontainer">
+        <a class="popup btn btn-danger" href="/Bill/Create" style="margin-bottom:20px; margin-top:50px;"> Create_Bill</a>
+         <a class="btn btn-success" href="http://localhost:8081/sendemail" style="margin-bottom:20px; margin-top:50px;">Send Bill By Mail</a>
+        @*<table id="myDatatable">
+        <thead>*@
+        <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+        <script src="~/Scripts/jquery.validate.min.js"></script>
+        @*<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>*@
+        <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+        <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+
+        <script>
+            $(document).ready(function () {
+
+                $('.tablecontainer').on('click', 'a.popup', function (e) {
+                    e.preventDefault();
+                    OpenPopup($(this).attr('href'));
+                })
+                function OpenPopup(pageUrl) {
+                    var $pageContent = $('<div/>');
+                    $pageContent.load(pageUrl, function () {
+                        $('#popupForm', $pageContent).removeData('validator');
+                        $('#popupForm', $pageContent).removeData('unobtrusiveValidation');
+                        $.validator.unobtrusive.parse('form');
+
+                    });
+
+                    $dialog = $('<div class="popupWindow" style="overflow:auto"></div>')
+                        .html($pageContent)
+                        .dialog({
+                            draggable: false,
+                            autoOpen: false,
+                            resizable: false,
+                            model: true,
+                            title: 'Popup Dialog',
+                            height: 550,
+                            width: 600,
+                            close: function () {
+                                $dialog.dialog('destroy').remove();
+                            }
+                        })
+
+                    $('.popupWindow').on('submit', '#popupForm', function (e) {
+                        var url = $('#popupForm')[0].action;
+                        $.ajax({
+                            type: "POST",
+                            url: url,
+                            data: $('#popupForm').serialize(),
+                            success: function (data) {
+                                if (data.status) {
+                                    $dialog.dialog('close');
+                                    oTable.ajax.reload();
+                                }
+                            }
+                        })
+
+                        e.preventDefault();
+                    })
+                    $dialog.dialog('open');
+                    // swal("Good job!", "You clicked the button!", "success");
+                }
+            })
+        </script>
+    </div>
+       

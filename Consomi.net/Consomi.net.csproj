@@ -133,6 +133,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\BillController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\CommandController.cs" />
     <Compile Include="Controllers\CompteController.cs" />
@@ -183,6 +184,7 @@
     <Compile Include="Models\ExtraTime.cs" />
     <Compile Include="Models\Jackpot.cs" />
     <Compile Include="Models\LigneComand.cs" />
+    <Compile Include="Models\Lignefacture.cs" />
     <Compile Include="Models\Meeting.cs" />
     <Compile Include="Models\Message.cs" />
     <Compile Include="Models\ModePayement.cs" />
@@ -216,6 +218,7 @@
     <Compile Include="Models\UserEtat.cs" />
     <Compile Include="Models\Versement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\BillService.cs" />
     <Compile Include="Service\CartService.cs" />
     <Compile Include="Service\CommandService.cs" />
     <Compile Include="Service\CompteService.cs" />
@@ -522,6 +525,9 @@
     <Content Include="Views\Compte\Create.cshtml" />
     <Content Include="Views\Compte\Detail.cshtml" />
     <Content Include="Views\Compte\Delete.cshtml" />
+    <Content Include="Views\Bill\Index.cshtml" />
+    <Content Include="Views\Bill\Create.cshtml" />
+    <Content Include="Views\Bill\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

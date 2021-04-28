@@ -28,6 +28,6 @@ namespace Consomi.net.Models
 
         [JsonProperty("deliveryman")]
         public object Deliveryman { get; set; }
-      
+       
     }
 }

@@ -1,0 +1,80 @@
+﻿@model Consomi.net.Models.Bill
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Bill</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IdBill)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdBill)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumBill)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumBill)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Totalfinal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Totalfinal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Datereglement)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Datereglement)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Datebill)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Datebill)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdDelivery)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdDelivery)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Idlig)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Idlig)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
