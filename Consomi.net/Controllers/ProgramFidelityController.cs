@@ -15,6 +15,10 @@ namespace Consomi.net.Controllers
         {
             return View(pfs.GetAll());
         }
+        public ActionResult Indexuser()
+        {
+            return View(pfs.GetAll());
+        }
         public ActionResult Details(int id)
         {
             ProgrammeFidelite pf = pfs.GetById(id);
@@ -88,7 +92,7 @@ namespace Consomi.net.Controllers
 
             if (pfs.Addprogramfidelity(pf))
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("Indexuser");
             }
 
 

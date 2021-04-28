@@ -1,0 +1,214 @@
+﻿@model IEnumerable<Consomi.net.Models.ProgrammeFidelite>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="shortcut icon" href="~/Content/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="~/Content/images/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="~/Content/csss/bootstrap.min.css">
+
+    <link rel="stylesheet" href="~/Content/csss/style.css">
+
+    <link rel="stylesheet" href="~/Content/csss/responsive.css">
+
+    <link rel="stylesheet" href="~/Content/csss/custom.css">
+
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <meta name="viewport" content="width=device-width" />
+
+    @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />*@
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" />
+    <link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+
+    <style>
+        span.field-validation-error {
+            color: red;
+        }
+    </style>
+</head>
+<div class="top-bar">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6">
+                <i class="fa fa-envelope"></i>
+                support@email.com
+            </div>
+            <div class="col-sm-6">
+                <i class="fa fa-phone-alt"></i>
+                +216-26-345-678
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Top bar End -->
+<!-- Nav Bar Start -->
+<div class="nav">
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+            <a href="#" class="navbar-brand">MENU</a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <div class="navbar-nav mr-auto">
+                    <a href="@Url.Action("Index","Home")" class="nav-item nav-link active">Home</a>
+                    <a href="@Url.Action("products","Home")" class="nav-item nav-link">Products</a>
+                    <a href="@Url.Action("Create","LigneCommand")" class="nav-item nav-link">Shop Detail</a>
+                    <a href="@Url.Action("Index","LigneCommand")" class="nav-item nav-link ">Cart</a>
+                    <a href="@Url.Action("checkout","Home")" class="nav-item nav-link">Checkout</a>
+                    <a href="@Url.Action("myaccount","Home")" class="nav-item nav-link">My Account</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">More Pages</a>
+                        <div class="dropdown-menu">
+                            <a href="@Url.Action("wishlist","Home")" class="dropdown-item">Wishlist</a>
+                            <a href="@Url.Action("login","Home")" class="dropdown-item">Login & Register</a>
+                            <a href="@Url.Action("Contact","Home")" class="dropdown-item">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="navbar-nav ml-auto">
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">User Account</a>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item">Login</a>
+                            <a href="#" class="dropdown-item">Register</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+<!-- Nav Bar End -->
+<!-- Bottom Bar Start -->
+<div class="bottom-bar">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-md-3">
+                <div class="logo">
+                    <a href="@Url.Action("Index","Home")">
+                        <img src="~/Content/img/logo.png" alt="Logo">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="search">
+                    <input type="text" placeholder="Search">
+                    <button><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="user">
+                    <a href="@Url.Action("wishlist","Home")" class="btn wishlist">
+                        <i class="fa fa-heart"></i>
+                        <span>(0)</span>
+                    </a>
+                    <a href="@Url.Action("cart","Home")" class="btn cart">
+                        <i class="fa fa-shopping-cart"></i>
+                        <span>(0)</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<table class="table">
+    <tr>
+        <th>
+            Customer_First_Name
+        </th>
+        <th>
+            Customer_Last_Name
+        </th>
+        <th>
+            Pointconverti
+        </th>
+        <th>
+            Nbrpoint
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Type)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Command.Cart.user.Firstname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Command.Cart.user.Lastname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Command.Cart.user.Pointconverti)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Command.Cart.user.Nbrpoint)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+
+        </tr>
+    }
+
+</table>
+<!-- Review End -->
+<!-- Footer Start -->
+<div class="footer">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+               
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+               
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+               
+            </div>
+        </div>
+
+        <div class="row payment align-items-center">
+            <div class="col-md-6">
+                <div class="payment-method">
+                    <h2>We Accept:</h2>
+                    <img src="~/Content/img/payment-method.png" alt="Payment Method" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="payment-security">
+                    <h2>Secured By:</h2>
+                    <img src="~/Content/img/godaddy.svg" alt="Payment Security" />
+                    <img src="~/Content/img/norton.svg" alt="Payment Security" />
+                    <img src="~/Content/img/ssl.svg" alt="Payment Security" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

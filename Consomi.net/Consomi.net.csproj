@@ -528,6 +528,7 @@
     <Content Include="Views\Bill\Index.cshtml" />
     <Content Include="Views\Bill\Create.cshtml" />
     <Content Include="Views\Bill\Delete.cshtml" />
+    <Content Include="Views\ProgramFidelity\Indexuser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
